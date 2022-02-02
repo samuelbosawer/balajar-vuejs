@@ -8,9 +8,13 @@
 </head>
 <body>
     <div id="vueApp">
+        <input type="text" v-model="subject">
         <h3>Belajar {{ subject }}</h3>    
-        <h3> {{ number }}</h3>    
+        <h3> {{ number }}</h3>  
         <button @click="makeItFun" > Make it gun </button>
+        <button @click="check" > Check </button>
+        <h3> Nilai {{ score }}</h3>  
+
     </div>
 
 
@@ -21,8 +25,9 @@
             data :
             {
                
-                    subject: 'Vuejs',
-                    number : 0
+                    subject: 'sam',
+                    number : 0,
+                    score :0
             },
             mounted(){
                 setInterval(() =>{
@@ -34,6 +39,14 @@
                 makeItFun()
                 {
                     this.subject = this.subject + " !!!!"
+                }, 
+                check()
+                {
+                    if(this.subject === 'sam')
+                     this.score = 100
+                    else
+                    this.score = 0
+
                 }
             }
         })
