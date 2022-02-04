@@ -9,8 +9,8 @@
 <body>
     <div id="vueApp">
         <h3>Belajar Vue.Js</h3> 
-        <ol>
-            <li v-for="s in subjects">
+        <ol v-show="status">
+            <li v-for="s in subjects" >
                 {{s.title}} - Type {{s.type}}
             </li>   
         </ol>
@@ -28,7 +28,8 @@
                     { title: 'Javascript', type: 'Native' },
                     { title: 'Vue', type: 'Framework' },
                     { title: 'React', type: 'Framework' },
-                ]
+                ],
+                status: true
             }
         })
     </script>
