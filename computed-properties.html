@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar Vue JS</title>
+    <style>
+        .active{
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="vueApp">
+        <h3>Belajar Vue.Js</h3> 
+        <input type="text" v-model="name">
+        <input type="number" v-model="age">
+
+        <p>
+            Namanya {{name}}, 
+            Umurnya {{age}}, {{expression}}
+        </p>
+
+    </div>
+
+
+    <script src="vue.js"></script>
+    <script>
+        var App = new Vue({
+            el : '#vueApp',
+            data(){
+               return {
+                   name: 'Samuel',
+                   age : 100
+               }
+            }, 
+            computed:{
+                expression(){
+                   if(this.age < 50)
+                   return 'muda sekali'
+                   else
+                   return 'tua skali'
+                    
+
+
+
+
+                }
+            }
+
+          
+        })
+    </script>
+</body>
+</html>
