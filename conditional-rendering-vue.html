@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar Vue JS</title>
+</head>
+<body>
+    <div id="vueApp">
+        <h3>Belajar Vue.Js</h3> 
+        <ol v-show="status">
+            <li v-for="s in subjects" >
+                {{s.title}} - Type {{s.type}}
+            </li>   
+        </ol>
+        <p v-else>
+            No SubJect
+        </p>
+        
+
+    </div>
+
+
+    <script src="vue.js"></script>
+    <script>
+        var App = new Vue({
+            el : '#vueApp',
+            data:{
+                subjects: [
+                    { title: 'Javascript', type: 'Native' },
+                    { title: 'Vue', type: 'Framework' },
+                    { title: 'React', type: 'Framework' },
+                ],
+                status: false
+            }
+        })
+    </script>
+</body>
+</html>
