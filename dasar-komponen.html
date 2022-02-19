@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar Vue JS</title>
+</head>
+<body>
+    <div id="vueApp">
+        <h3>Belajar Vue.Js</h3> 
+        <blog-post desc="tes" title="Judul"> </blog-post>
+        <blog-post-p desc="tes" title="Judul"> </blog-post-p>
+    
+
+    </div>
+
+
+    <script src="vue.js"></script>
+    <script>
+        Vue.component('blog-post',{
+            props: ['title','desc'],
+            template: `<h3>{{title}} </h3> 
+                      `
+        })
+        Vue.component('blog-post-p',{
+            props: ['title','desc'],
+            template: `<p>{{desc}} </p>`
+        })
+        new Vue({el : '#vueApp'})
+    </script>
+</body>
+</html> 
